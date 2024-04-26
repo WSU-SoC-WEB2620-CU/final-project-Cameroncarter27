@@ -1,0 +1,118 @@
+// Before Bootstrap
+$primary: #50bfb0;
+// Import Bootstrap
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "bootstrap/scss/bootstrap";
+
+
+// After Bootstrap
+$main-orange: #ffc268ff;
+$header-gray: rgb(236, 233, 233);
+$title-gray:  #666666ff;
+
+@mixin header-styles {
+    display: flex;
+    flex-direction: row-reverse;
+    // flex-flow: row nowrap;
+    & .top {
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: $main-orange;
+
+        & .logo {
+            flex: 1;
+            align-self: center;
+    
+            & img {
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+        
+        
+        & .brand-name {
+            flex: 2;
+            justify-content: center;
+            align-self: center;
+            
+            & h1 {
+                font-size: 2.5rem;
+                color:  #666666ff
+            }
+        }
+        
+    }
+    & .bottom{
+        background-color: $main-orange;
+
+        & a {
+            color: white;
+        }
+    }
+
+    @media all and (min-width: 768px) {
+        & {
+            flex-flow: column nowrap;
+
+            & .logo {
+                flex: 1;
+                align-self:normal;
+                & img {
+                    width: 8rem;
+                    height: 8rem;
+                }
+            }
+
+            & .brand-name {
+                & h1 {
+                    font-size: 2.5rem;
+                } 
+                
+            }
+            
+            & .bottom {
+                display:flex;
+                justify-content: center;
+                background-color: $header-gray;
+            }
+                
+            
+        }
+    }
+    
+}
+
+@mixin footer-styles {
+    background-color: $main-orange;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:center;
+
+    & p{
+        margin: 0;
+        align-self: center;
+        padding: .75rem;
+    }
+
+    & ul {
+        margin: 0;
+        padding: 1rem;
+        
+
+        & li {
+            display: inline;
+            padding: .75rem;
+        }
+    }
+
+    @media all and (min-width: 576px) {
+        & {
+            flex-flow: row nowrap;
+
+            & ul {
+                flex: 1;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,52 @@
+@import "global";
+header{
+    background-color: $main-orange;
+}
+.combined{
+    @include header-styles;
+ }
+main {
+    margin-bottom: 5rem;
+    
+    & p {
+        margin-bottom: 2rem;
+    }
+    & h1{
+        color: $primary;
+        text-align: center;
+    }
+    & h2 {
+        color: $title-gray;
+        text-align: center;
+    }
+}
+
+footer{
+    @include footer-styles;
+}
+
+@media all and (max-width: 768px) and (min-width: 577px){
+    main {
+        margin-bottom: 4.5rem;
+        & h1{
+            color: $primary;
+            text-align: left;
+        }
+        & h2 {
+            color: $title-gray;
+            text-align: left;
+        }
+    }
+}
+@media all and (min-width: 769px) {
+    main {
+        & h1{
+            color: $primary;
+            text-align: left;
+        }
+        & h2 {
+            color: $title-gray;
+            text-align: left;
+        }
+    }
+}

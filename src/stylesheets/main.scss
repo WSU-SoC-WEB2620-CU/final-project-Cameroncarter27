@@ -1,1 +1,55 @@
-// Your styles go here
+@import "global";
+header{
+    background-color: $main-orange;
+}
+.combined{
+   @include header-styles;
+}
+
+main {
+    & img {
+        width: 17rem;
+        height: 22rem;
+        
+    }
+    & .button{
+        text-align: center;
+    }
+    
+}
+
+
+
+footer{
+    @include footer-styles;
+}
+
+@media all and (max-width: 768px) and (min-width: 577px){
+    main {
+        & img {
+            width: 20rem;
+            height: 25rem;
+            
+        }
+    }
+        
+
+}
+@media all and (min-width: 769px) {
+    
+    main {
+        & img {
+            width: 25rem;
+            height: 30rem;
+            
+        }
+        & .button {
+            text-align: left;
+        }
+    }
+}
+
+
+
+
+
